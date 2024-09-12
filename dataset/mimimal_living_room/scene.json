@@ -1,0 +1,645 @@
+{
+    "objects": {
+        "wall_0": {
+            "description": "",
+            "category": "walls",
+            "placements": [
+                {
+                    "position": [
+                        -3.0,
+                        -4.0,
+                        2.25
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": null,
+            "material": {
+                "id": "Bricks074",
+                "description": "exposed brick, rough"
+            },
+            "identifier": null,
+            "metadata": {
+                "polygon": [
+                    [
+                        -3.0,
+                        -4.0,
+                        0
+                    ],
+                    [
+                        -3.0,
+                        -4.0,
+                        0
+                    ],
+                    [
+                        -3.0,
+                        -4.0,
+                        4.5
+                    ],
+                    [
+                        -3.0,
+                        -4.0,
+                        4.5
+                    ]
+                ]
+            }
+        },
+        "wall_1": {
+            "description": "",
+            "category": "walls",
+            "placements": [
+                {
+                    "position": [
+                        0.0,
+                        -4.0,
+                        2.25
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": null,
+            "material": {
+                "id": "Bricks074",
+                "description": "exposed brick, rough"
+            },
+            "identifier": null,
+            "metadata": {
+                "polygon": [
+                    [
+                        -3.0,
+                        -4.0,
+                        0
+                    ],
+                    [
+                        3.0,
+                        -4.0,
+                        0
+                    ],
+                    [
+                        3.0,
+                        -4.0,
+                        4.5
+                    ],
+                    [
+                        -3.0,
+                        -4.0,
+                        4.5
+                    ]
+                ]
+            }
+        },
+        "wall_2": {
+            "description": "",
+            "category": "walls",
+            "placements": [
+                {
+                    "position": [
+                        3.0,
+                        0.0,
+                        2.25
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": null,
+            "material": {
+                "id": "Bricks074",
+                "description": "exposed brick, rough"
+            },
+            "identifier": null,
+            "metadata": {
+                "polygon": [
+                    [
+                        3.0,
+                        -4.0,
+                        0
+                    ],
+                    [
+                        3.0,
+                        4.0,
+                        0
+                    ],
+                    [
+                        3.0,
+                        4.0,
+                        4.5
+                    ],
+                    [
+                        3.0,
+                        -4.0,
+                        4.5
+                    ]
+                ]
+            }
+        },
+        "wall_3": {
+            "description": "",
+            "category": "walls",
+            "placements": [
+                {
+                    "position": [
+                        0.0,
+                        4.0,
+                        2.25
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": null,
+            "material": {
+                "id": "Bricks074",
+                "description": "exposed brick, rough"
+            },
+            "identifier": null,
+            "metadata": {
+                "polygon": [
+                    [
+                        3.0,
+                        4.0,
+                        0
+                    ],
+                    [
+                        -3.0,
+                        4.0,
+                        0
+                    ],
+                    [
+                        -3.0,
+                        4.0,
+                        4.5
+                    ],
+                    [
+                        3.0,
+                        4.0,
+                        4.5
+                    ]
+                ]
+            }
+        },
+        "wall_4": {
+            "description": "",
+            "category": "walls",
+            "placements": [
+                {
+                    "position": [
+                        -3.0,
+                        0.0,
+                        2.25
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": null,
+            "material": {
+                "id": "Bricks074",
+                "description": "exposed brick, rough"
+            },
+            "identifier": null,
+            "metadata": {
+                "polygon": [
+                    [
+                        -3.0,
+                        4.0,
+                        0
+                    ],
+                    [
+                        -3.0,
+                        -4.0,
+                        0
+                    ],
+                    [
+                        -3.0,
+                        -4.0,
+                        4.5
+                    ],
+                    [
+                        -3.0,
+                        4.0,
+                        4.5
+                    ]
+                ]
+            }
+        },
+        "floors": {
+            "description": "",
+            "category": "floors",
+            "placements": [
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": [
+                6.0,
+                8.0,
+                0.0
+            ],
+            "material": {
+                "id": "Concrete042A",
+                "description": "polished concrete, smooth"
+            },
+            "identifier": null,
+            "metadata": {
+                "polygon": [
+                    [
+                        -3.0,
+                        -4.0,
+                        0.0
+                    ],
+                    [
+                        3.0,
+                        -4.0,
+                        0.0
+                    ],
+                    [
+                        3.0,
+                        4.0,
+                        0.0
+                    ],
+                    [
+                        -3.0,
+                        4.0,
+                        0.0
+                    ]
+                ]
+            }
+        },
+        "ceilings": {
+            "description": "",
+            "category": "ceilings",
+            "placements": [
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": [
+                6.0,
+                8.0,
+                0.0
+            ],
+            "material": {
+                "id": "ManholeCover007",
+                "description": "steel beams, industrial finish"
+            },
+            "identifier": null,
+            "metadata": {
+                "polygon": [
+                    [
+                        -3.0,
+                        -4.0,
+                        4.5
+                    ],
+                    [
+                        3.0,
+                        -4.0,
+                        4.5
+                    ],
+                    [
+                        3.0,
+                        4.0,
+                        4.5
+                    ],
+                    [
+                        -3.0,
+                        4.0,
+                        4.5
+                    ]
+                ]
+            }
+        },
+        "default_light": {
+            "description": "default light at the center of the room",
+            "category": "lights",
+            "placements": [
+                {
+                    "position": [
+                        0.0,
+                        0.0,
+                        1.6
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": null,
+            "material": null,
+            "identifier": null,
+            "metadata": {
+                "light_intensity": 40,
+                "light_type": "point",
+                "light_color": [
+                    255,
+                    255,
+                    255
+                ]
+            }
+        },
+        "modern_grey_fabric_sofa_1": {
+            "description": "sofa",
+            "category": "objects",
+            "placements": [
+                {
+                    "position": [
+                        -0.92,
+                        3.62,
+                        0.37
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        180.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": [
+                2.0,
+                0.7,
+                0.74
+            ],
+            "material": null,
+            "identifier": "104ac40ef3ad4dac8079a11548c470e7",
+            "metadata": {
+                "annotation": {
+                    "description": "A modern three-seater sofa with a light gray fabric upholstery, wooden legs, and several decorative cushions.",
+                    "category": "sofa",
+                    "width": 200,
+                    "depth": 90,
+                    "height": 85,
+                    "volume": 1530,
+                    "materials": [
+                        "fabric",
+                        "wood",
+                        "foam",
+                        "metal",
+                        "air"
+                    ],
+                    "composition": [
+                        0.5,
+                        0.2,
+                        0.15,
+                        0.1,
+                        0.05
+                    ],
+                    "mass": 50,
+                    "receptacle": false,
+                    "frontView": 0,
+                    "onCeiling": false,
+                    "onWall": false,
+                    "onFloor": true,
+                    "onObject": false,
+                    "uid": "104ac40ef3ad4dac8079a11548c470e7",
+                    "pose_z_rot_angle": -0.0,
+                    "scale": 0.85,
+                    "z_axis_scale": true,
+                    "dim_x": 2.0,
+                    "dim_y": 0.7,
+                    "dim_z": 0.74
+                },
+                "asset_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/104ac40ef3ad4dac8079a11548c470e7/processed_asset.glb",
+                "lvis_category": "sofa",
+                "thumbnail_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/104ac40ef3ad4dac8079a11548c470e7/blender_renders/render_0.0.jpg"
+            }
+        },
+        "wooden_coffee_table_1": {
+            "description": "table",
+            "category": "objects",
+            "placements": [
+                {
+                    "position": [
+                        0.52,
+                        3.57,
+                        0.21
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        180.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": [
+                0.8,
+                0.8,
+                0.42
+            ],
+            "material": null,
+            "identifier": "fabb3a16609b49789c016f9e171785be",
+            "metadata": {
+                "annotation": {
+                    "description": "A simple, square wooden coffee table with a flat top and sturdy legs.",
+                    "category": "coffee table",
+                    "width": 80,
+                    "depth": 80,
+                    "height": 45,
+                    "volume": 288,
+                    "materials": [
+                        "wood",
+                        "air"
+                    ],
+                    "composition": [
+                        0.95,
+                        0.05
+                    ],
+                    "mass": 20,
+                    "receptacle": false,
+                    "frontView": 0,
+                    "onCeiling": false,
+                    "onWall": false,
+                    "onFloor": true,
+                    "onObject": false,
+                    "uid": "fabb3a16609b49789c016f9e171785be",
+                    "pose_z_rot_angle": -0.0,
+                    "scale": 0.45,
+                    "z_axis_scale": true,
+                    "dim_x": 0.8,
+                    "dim_y": 0.8,
+                    "dim_z": 0.42
+                },
+                "asset_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/fabb3a16609b49789c016f9e171785be/processed_asset.glb",
+                "lvis_category": "table",
+                "thumbnail_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/fabb3a16609b49789c016f9e171785be/blender_renders/render_0.0.jpg"
+            }
+        },
+        "black_tv_stand_with_tv_1": {
+            "description": "television_set",
+            "category": "objects",
+            "placements": [
+                {
+                    "position": [
+                        -0.92,
+                        -3.9,
+                        0.34
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": [
+                1.2,
+                0.15,
+                0.69
+            ],
+            "material": null,
+            "identifier": "51cfe336d19243eba66c5fac64a81507",
+            "metadata": {
+                "annotation": {
+                    "description": "A modern flat-screen television with a sleek design, featuring a colorful test pattern on the screen and multiple input ports on the back.",
+                    "category": "television",
+                    "width": 120,
+                    "depth": 10,
+                    "height": 70,
+                    "volume": 84,
+                    "materials": [
+                        "plastic",
+                        "glass",
+                        "metal",
+                        "air"
+                    ],
+                    "composition": [
+                        0.5,
+                        0.2,
+                        0.2,
+                        0.1
+                    ],
+                    "mass": 15,
+                    "receptacle": false,
+                    "frontView": 2,
+                    "onCeiling": false,
+                    "onWall": true,
+                    "onFloor": true,
+                    "onObject": true,
+                    "uid": "51cfe336d19243eba66c5fac64a81507",
+                    "pose_z_rot_angle": -3.14,
+                    "scale": 0.7,
+                    "z_axis_scale": true,
+                    "dim_x": 1.2,
+                    "dim_y": 0.15,
+                    "dim_z": 0.69
+                },
+                "asset_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/51cfe336d19243eba66c5fac64a81507/processed_asset.glb",
+                "lvis_category": "television_set",
+                "thumbnail_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/51cfe336d19243eba66c5fac64a81507/blender_renders/render_0.0.jpg"
+            }
+        },
+        "tall_floor_lamp_with_white_shade_1": {
+            "description": "table_lamp",
+            "category": "objects",
+            "placements": [
+                {
+                    "position": [
+                        -2.28,
+                        3.81,
+                        0.8
+                    ],
+                    "rotation": [
+                        0.0,
+                        0.0,
+                        180.0
+                    ],
+                    "scale": 1.0
+                }
+            ],
+            "bbox_size": [
+                0.57,
+                0.32,
+                1.6
+            ],
+            "material": null,
+            "identifier": "51824919f5264e429b75d02371205064",
+            "metadata": {
+                "annotation": {
+                    "description": "A modern floor lamp with a round base and two lampshades, one positioned higher than the other on curved arms.",
+                    "category": "floor lamp",
+                    "width": 40,
+                    "depth": 40,
+                    "height": 160,
+                    "volume": 80,
+                    "materials": [
+                        "metal",
+                        "fabric",
+                        "plastic",
+                        "air"
+                    ],
+                    "composition": [
+                        0.6,
+                        0.2,
+                        0.1,
+                        0.1
+                    ],
+                    "mass": 8,
+                    "receptacle": false,
+                    "frontView": 0,
+                    "onCeiling": false,
+                    "onWall": false,
+                    "onFloor": true,
+                    "onObject": false,
+                    "uid": "51824919f5264e429b75d02371205064",
+                    "pose_z_rot_angle": -0.0,
+                    "scale": 1.6,
+                    "z_axis_scale": true,
+                    "dim_x": 0.57,
+                    "dim_y": 0.32,
+                    "dim_z": 1.6
+                },
+                "asset_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/51824919f5264e429b75d02371205064/processed_asset.glb",
+                "lvis_category": "table_lamp",
+                "thumbnail_url": "https://playcanvas-public.s3.amazonaws.com//viscam/data/objaverse_lvis_preprocessed/51824919f5264e429b75d02371205064/blender_renders/render_0.0.jpg"
+            }
+        }
+    },
+    "room_type": "warehouse"
+}

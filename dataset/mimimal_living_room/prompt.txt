@@ -1,0 +1,174 @@
+**Role**: You are a software programmer.
+
+**Task**: As a programmer, you are required to complete an implementation. Use a Chain-of-Thought approach to break down the problem, create pseudocode, and then write the code in Python language. Ensure that your code is efficient, readable, and well-commented. 
+Return the requested information from the function you create. Remember to call the function your create towards the end.
+
+**Dos and Don'ts**: 
+* Only use the API functions provided.
+* Give scene elements unique and descriptive names. For example, brown_leather_sofa_1, ceiling_light_1, lamp_next_to_window_2.
+* You can duplicate or remove assets and lights by manipulating the attribute "placements" of the asset instance.
+* Make sure to provide a detailed description of any new assets you add as the description will be used to retrieve the 3D model later.
+* Positions are bounding box center in meters, given as [x, y, z]. Rotations are in degrees, given as [pitch, yaw, roll]. 
+* Note that the x-y plane is the floor, the z-axis is the vertical direction, and the origin is at the center of the room. Thus, if a sofa is on the floor, the z-coordinate should be half the z-axis bounding box size of the sofa.
+* Do not re-initialize the scene by calling SceneDef() again. The scene is already initialized and you can access the current scene using the variable "scene".
+* To add any object to the scene, you need to add it to scene.objects dictionary with a unique key.
+* Make all modifications to the SceneDef instance named scene as we will read out the results from the variable named `scene`.
+* Do not re-initialize the scene by calling SceneDef() again. The scene is already initialized and you can access the current scene using the variable "scene".
+
+
+**Base Class Definitions**
+```python
+
+from pydantic import BaseModel, Field, conint
+from typing import List, Optional, Dict, Literal, Any
+
+class Placement(BaseModel):
+    position: List[float] = Field(description="3D Position of the asset", default=[0, 0, 0])
+    rotation: List[float] = Field(description="3D Rotation of the asset", default=[0, 0, 0])
+    scale: float = Field(description="Axis-aligned size of the bounding box before the rotation is applied", default=1.)
+
+class Material(BaseModel):
+    id: str = Field(description="ID of the material")
+    description: str = Field(description="Description of the material")
+
+class SceneElement(BaseModel):
+    description: str = Field(description="Detailed natural language description of the scene element", default="")
+    category: Literal["floors", "walls", "ceilings", "doors", "windows", "objects", "lights"] = Field(description="Category of the scene element")
+    placements: List[Placement] = Field(description="Placement information for the scene element")
+    material: Optional[Material] = Field(description="Default material applied to the scene element", default=None)
+    bbox_size: Optional[List[float]] = Field(description="Axis-aligned size of the bounding box before the rotation is applied", default=None)
+    identifier: Optional[str] = Field(description="ID or Path to the asset file in the database", default=None)
+    metadata: Optional[Dict[str, Any]] = Field(description="Additional metadata for the scene element", default=None)
+
+class SceneDef(BaseModel):
+    objects: Dict[str, SceneElement] = Field(description="Dictionary of assets in the scene with asset variable name as keys. The asset variable name should be a valid Python variable name.", default={})
+    room_type: Optional[str] = Field(description="room type", default="an interior scene")
+
+scene = SceneDef()
+
+```
+
+**Documentation**:
+This is the documentation for the functions you have access to. You may call any of these functions to help you complete the task.
+
+retrieve_material(description: str) -> airblender.scene_definition.Material:
+'retrieve_material' is a tool that can retrieve a PBR material from language description.
+    It returns a dictionary containing the id and description of the retrieved material.
+
+    Parameters:
+        description (str): The description of the material to change the wall to
+
+    Returns:
+        Material: A dictionary containing the id and description of the retrieved material.
+
+    Example
+    -------
+        >>> brick_wall_material = retrieve_material("brick wall")
+        >>> print(brick_wall_material.dict())
+        {
+            "id": "BrickWall005", "description": "dark red brick wall"
+        }
+    
+
+retrieve_new_scene_element(scene: airblender.scene_definition.SceneDef, description: str) -> airblender.scene_definition.SceneElement:
+'retrieve_new_scene_element' is a tool that can retrieve an asset from the database from language description.
+    It returns a dictionary containing the id, description, size, and other optional metadata of the retrieved asset.
+    Note that the asset is added to the origin (center of the scene) with no rotation.
+    
+    Parameters:
+        scene (SceneDef): The scene to add the new asset to
+        description (str): The description of the asset to retrieve
+    
+    Returns:
+        SceneElement: a scene element containing the id, description, size, and other optional metadata of the retrieved asset.
+        
+    Example
+    -------
+        >>> new_scene_element = add_scene_element(scene, "a brown leather sofa")
+        >>> print(new_scene_element.dict())
+        {
+            "identifier": "BrownLeatherSofa001",
+            "description": "brown leather sofa",
+            "bbox_size": [1.5, 0.8, 0.8], 
+            "placements": [{
+                "position": [0, 0, 0],
+                "rotation": [0, 0, 0],
+            }],
+            "metadata": {
+                ...
+            }
+        }
+    
+
+adjust_layout(scene: airblender.scene_definition.SceneDef, assets: List[str], layout_instruction: str) -> Dict[str, Any]:
+'adjust_layout' is a tool that can solve the layout for a given a list of assets given a prompt that describes the layout.
+    Always assign the output of this function to the `scene` variable.
+
+    Parameters:
+        scene (SceneDef): The scene to adjust the layout
+        assets (List[str]): The list of assets to be rearranged
+        layout_instruction (str): The instruction to rearrange the assets
+
+    Returns:
+        scene (SceneDef): The updated scene with the adjusted layout    
+
+    Example
+    -------
+        >>> scene = adjust_layout(scene, ["table", "chair", "sofa"], "place the table in the center of the room")
+        {
+            "objects": {
+                "table": {
+                    "position": [0, 0, 0],
+                    "rotation": [0, 0, 0],    
+                    ...
+
+                }
+            }
+        }
+    
+
+load_image(image_path: str) -> numpy.ndarray:
+'load_image' is a utility function that loads an image from the given file path string.
+
+    Parameters:
+        image_path (str): The path to the image.
+
+    Returns:
+        np.ndarray: The image as a NumPy array.
+
+    Example
+    -------
+        >>> load_image("path/to/image.jpg")
+    
+
+
+
+**Sample Tasks and Solutions**
+
+
+
+**Program of the Current Scene**
+scene.room_type = "warehouse"
+# Existing Scene Elements
+scene.objects['wall_0'] = SceneElement.parse_obj({'category': 'walls', 'placements': [{'position': [-3.0, -4.0, 2.25]}], 'material': {'id': 'Bricks074', 'description': 'exposed brick, rough'}, 'metadata': {'polygon': [[-3.0, -4.0, 0], [-3.0, -4.0, 0], [-3.0, -4.0, 4.5], [-3.0, -4.0, 4.5]]}})
+scene.objects['wall_1'] = SceneElement.parse_obj({'category': 'walls', 'placements': [{'position': [0.0, -4.0, 2.25]}], 'material': {'id': 'Bricks074', 'description': 'exposed brick, rough'}, 'metadata': {'polygon': [[-3.0, -4.0, 0], [3.0, -4.0, 0], [3.0, -4.0, 4.5], [-3.0, -4.0, 4.5]]}})
+scene.objects['wall_2'] = SceneElement.parse_obj({'category': 'walls', 'placements': [{'position': [3.0, 0.0, 2.25]}], 'material': {'id': 'Bricks074', 'description': 'exposed brick, rough'}, 'metadata': {'polygon': [[3.0, -4.0, 0], [3.0, 4.0, 0], [3.0, 4.0, 4.5], [3.0, -4.0, 4.5]]}})
+scene.objects['wall_3'] = SceneElement.parse_obj({'category': 'walls', 'placements': [{'position': [0.0, 4.0, 2.25]}], 'material': {'id': 'Bricks074', 'description': 'exposed brick, rough'}, 'metadata': {'polygon': [[3.0, 4.0, 0], [-3.0, 4.0, 0], [-3.0, 4.0, 4.5], [3.0, 4.0, 4.5]]}})
+scene.objects['wall_4'] = SceneElement.parse_obj({'category': 'walls', 'placements': [{'position': [-3.0, 0.0, 2.25]}], 'material': {'id': 'Bricks074', 'description': 'exposed brick, rough'}, 'metadata': {'polygon': [[-3.0, 4.0, 0], [-3.0, -4.0, 0], [-3.0, -4.0, 4.5], [-3.0, 4.0, 4.5]]}})
+scene.objects['floors'] = SceneElement.parse_obj({'category': 'floors', 'placements': [{'position': [0.0, 0.0, 0.0]}], 'bbox_size': [6.0, 8.0, 0.0], 'material': {'id': 'Concrete042A', 'description': 'polished concrete, smooth'}, 'metadata': {'polygon': [[-3.0, -4.0, 0.0], [3.0, -4.0, 0.0], [3.0, 4.0, 0.0], [-3.0, 4.0, 0.0]]}})
+scene.objects['ceilings'] = SceneElement.parse_obj({'category': 'ceilings', 'placements': [{'position': [0.0, 0.0, 0.0]}], 'bbox_size': [6.0, 8.0, 0.0], 'material': {'id': 'ManholeCover007', 'description': 'steel beams, industrial finish'}, 'metadata': {'polygon': [[-3.0, -4.0, 4.5], [3.0, -4.0, 4.5], [3.0, 4.0, 4.5], [-3.0, 4.0, 4.5]]}})
+scene.objects['default_light'] = SceneElement.parse_obj({'description': 'default light at the center of the room', 'category': 'lights', 'placements': [{'position': [0.0, 0.0, 1.6]}], 'metadata': {'light_intensity': 40, 'light_type': 'point', 'light_color': [255, 255, 255]}})
+
+
+**Conversation History** 
+None: You are a helpful assistant.
+client: a warehouse
+you: The warehouse has been initialized. I have set the wall material to exposed brick, rough, the floor material to polished concrete, smooth, and the ceiling material to steel beams, industrial finish.
+you: This is your current 3D scene.
+
+**The Client's Current Instruction:** "living room assets"
+
+**Output Program:**
+```python
+# Your code here
+```
